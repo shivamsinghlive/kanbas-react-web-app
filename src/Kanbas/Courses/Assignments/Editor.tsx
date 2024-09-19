@@ -109,7 +109,7 @@ export default function AssignmentEditor() {
               name="wd-assign-to-name"
               id="wd-assign-to"
               value="Everyone"
-            />
+            /> <br />
           </td>
           <br />
           <br />
