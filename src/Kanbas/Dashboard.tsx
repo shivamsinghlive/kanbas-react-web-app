@@ -11,7 +11,7 @@ export default function Dashboard() {
             className="wd-dashboard-course-link"
             to="/Kanbas/Courses/1234/Home"
           >
-            <img src="/images/reactjs.jpg" width={200} />
+            <img src="/images/reactjs.jpg" alt="reactjs" width={200} />
             <div>
               <h5>CS1234 React JS</h5>
               <p className="wd-dashboard-course-title">
@@ -27,7 +27,7 @@ export default function Dashboard() {
             className="wd-dashboard-course-link"
             to="/Kanbas/Courses/2002/Home"
           >
-            <img src="/images/spanish.jpg" width={200} />
+            <img src="/images/spanish.jpg" alt="spanish" width={200} />
             <div>
               <h5>CS2002 Spanish </h5>
               <p className="wd-dashboard-course-title">
@@ -42,7 +42,7 @@ export default function Dashboard() {
             className="wd-dashboard-course-link"
             to="/Kanbas/Courses/4000/Home"
           >
-            <img src="/images/aws.jpg" width={200} />
+            <img src="/images/aws.jpg" alt="aws" width={200} />
             <div>
               <h5>CS4000 AWS</h5>
               <p className="wd-dashboard-course-title">
@@ -58,7 +58,7 @@ export default function Dashboard() {
             className="wd-dashboard-course-link"
             to="/Kanbas/Courses/1400/Home"
           >
-            <img src="/images/cpp.jpg" width={200} />
+            <img src="/images/cpp.jpg" alt="cpp" width={200} />
             <div>
               <h5>CS1400 C++</h5>
               <p className="wd-dashboard-course-title">
@@ -73,7 +73,7 @@ export default function Dashboard() {
             className="wd-dashboard-course-link"
             to="/Kanbas/Courses/2100/Home"
           >
-            <img src="/images/sql.jpg" width={200} />
+            <img src="/images/sql.jpg" alt="cpp" width={200} />
             <div>
               <h5>CS2100 SQL </h5>
               <p className="wd-dashboard-course-title">
@@ -88,7 +88,7 @@ export default function Dashboard() {
             className="wd-dashboard-course-link"
             to="/Kanbas/Courses/2000/Home"
           >
-            <img src="/images/ios.jpg" width={200} />
+            <img src="/images/ios.jpg" alt="ios" width={200} />
             <div>
               <h5>CS2000 IOS Application Development</h5>
               <p className="wd-dashboard-course-title">
@@ -103,7 +103,7 @@ export default function Dashboard() {
             className="wd-dashboard-course-link"
             to="/Kanbas/Courses/1100/Home"
           >
-            <img src="/images/kotlin.jpg" width={200} />
+            <img src="/images/kotlin.jpg" alt="kotlin" width={200} />
             <div>
               <h5>CS1100 Kotlin</h5>
               <p className="wd-dashboard-course-title">
@@ -118,7 +118,7 @@ export default function Dashboard() {
             className="wd-dashboard-course-link"
             to="/Kanbas/Courses/1000/Home"
           >
-            <img src="/images/pdp.jpg" width={200} />
+            <img src="/images/pdp.jpg" alt="java" width={200} />
             <div>
               <h5>CS1000 Java</h5>
               <p className="wd-dashboard-course-title">
