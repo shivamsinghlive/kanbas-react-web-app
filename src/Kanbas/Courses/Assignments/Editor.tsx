@@ -23,7 +23,7 @@ export default function AssignmentEditor() {
         </td>
         <td>
           {/* <input id="wd-points" value={100} /> */}
-          <select name="wd-assignment-group" id="wd-assignment-group-select">
+          <select name="wd-assignment-group" id="wd-group">
             <option value="assignment_1">Assignment 1</option>
           </select>
         </td>
@@ -32,7 +32,7 @@ export default function AssignmentEditor() {
             <label htmlFor="wd-display-grade-as">Display Grade as</label>
           </td>
           <td>
-            <select name="wd-display-grade-as" id="wd-display-grade-as-select">
+            <select name="wd-display-grade-as" id="wd-display-grade-as">
               <option value="percentage">Percentage</option>
             </select>
           </td>
@@ -42,7 +42,7 @@ export default function AssignmentEditor() {
             <label htmlFor="wd-submission-type">Submission Type</label>
           </td>
           <td>
-            <select name="wd-submission-type" id="wd-submission-type-select">
+            <select name="wd-submission-type" id="wd-submission-type">
               <option value="online">Online</option>
             </select>
             <br />
@@ -89,7 +89,7 @@ export default function AssignmentEditor() {
             <input
               type="checkbox"
               name="wd-online-entry-options"
-              id="wd-file-uploads"
+              id="wd-file-upload"
               value="file-uploads"
             />
             <label htmlFor="wd-website-url">File Uploads</label>
@@ -120,7 +120,7 @@ export default function AssignmentEditor() {
             <input
               type="date"
               name="wd-due-name"
-              id="wd-due"
+              id="wd-due-date"
               value="2024-05-13"
             />
             <br />
@@ -133,7 +133,7 @@ export default function AssignmentEditor() {
                   <input
                     type="date"
                     name="wd-available-from-date-name"
-                    id="wd-available-from-date"
+                    id="wd-available-from"
                     value="2024-05-06"
                   />
                 </td>
@@ -143,7 +143,7 @@ export default function AssignmentEditor() {
                   <input
                     type="date"
                     name="wd-until-date-name"
-                    id="wd-until-date"
+                    id="wd-available-until"
                     value="2024-05-20"
                   />
                 </td>
