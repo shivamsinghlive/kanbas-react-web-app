@@ -100,7 +100,7 @@ export default function AssignmentEditor() {
 
         <tr>
           
-              <td align="right" valign="top">Assign</td>
+              <td align="right" valign="top"><label htmlFor="wd-assign-to"></label>Assign</td>
           <td>
             <label htmlFor="wd-assign-to">Assign to</label> <br />
             <input
