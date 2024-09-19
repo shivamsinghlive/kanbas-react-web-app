@@ -94,13 +94,13 @@ export default function AssignmentEditor() {
             />
             <label htmlFor="wd-website-url">File Uploads</label>
             <br />
+            <br />
           </td>
-          
         </tr>
 
         <tr>
-          {/* <br /> */}
-          <td>Assign</td>
+          
+              <td align="right" valign="top">Assign</td>
           <td>
             <label htmlFor="wd-assign-to">Assign to</label> <br />
             <input
@@ -109,11 +109,9 @@ export default function AssignmentEditor() {
               id="wd-assign-to"
               value="Everyone"
             />
-            
           </td>
         </tr>
         <tr>
-          
           <td></td>
           <td>
             <label htmlFor="wd-due">Due</label> <br />
@@ -149,16 +147,17 @@ export default function AssignmentEditor() {
                 </td>
               </tr>
             </table>
-            <hr />
-            <div style={{ float: "right" }}>
-              <button>Cancel</button>
-              <button>Save</button>
-            </div>
-            <br />
+                        <br />
           </td>
         </tr>
         {/* Complete on your own */}
       </table>
+      <hr />
+            <div style={{ float: "right" }}>
+              <button>Cancel</button>
+              <button>Save</button>
+            </div>
+
     </div>
   );
 }
