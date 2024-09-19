@@ -128,7 +128,7 @@ export default function AssignmentEditor() {
             <table>
               <tr>
                 <td>
-                  <label htmlFor="wd-available-from-date">Available From</label>
+                  <label htmlFor="wd-available-from">Available From</label>
                   <br />
 
                   <input
@@ -139,7 +139,7 @@ export default function AssignmentEditor() {
                   />
                 </td>
                 <td>
-                  <label htmlFor="wd-until-date">Until</label>
+                  <label htmlFor="wd-available-until">Until</label>
                   <br />
                   <input
                     type="date"
