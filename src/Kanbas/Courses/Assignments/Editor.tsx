@@ -110,6 +110,7 @@ export default function AssignmentEditor() {
               value="Everyone"
             />
           </td>
+          <br />
         </tr>
         <tr>
           <td></td>
@@ -121,6 +122,7 @@ export default function AssignmentEditor() {
               id="wd-due-date"
               value="2024-05-13"
             />
+            <br />
             <br />
             <table>
               <tr>
