@@ -19,7 +19,7 @@ export default function AssignmentEditor() {
           </td>
         </tr>
         <td align="right" valign="top">
-          <label htmlFor="wd-assignment-group">Assignment Group</label>
+          <label htmlFor="wd-group">Assignment Group</label>
         </td>
         <td>
           {/* <input id="wd-points" value={100} /> */}
@@ -116,7 +116,7 @@ export default function AssignmentEditor() {
         <tr>
           <td></td>
           <td>
-            <label htmlFor="wd-due">Due</label> <br />
+            <label htmlFor="wd-due-date">Due</label> <br />
             <input
               type="date"
               name="wd-due-name"
