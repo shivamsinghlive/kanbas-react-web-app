@@ -1,7 +1,7 @@
 export default function AssignmentEditor() {
   return (
     <div id="wd-assignments-editor">
-      <label htmlFor="wd-name">Assignment Name</label>
+      <label htmlFor="wd-name"><b>Assignment Name</b></label><br />
       <input id="wd-name" value="A1 - ENV + HTML" />
       <br />
       <br />
@@ -99,8 +99,9 @@ export default function AssignmentEditor() {
         </tr>
 
         <tr>
-          
-              <td align="right" valign="top"><label htmlFor="wd-assign-to"></label>Assign</td>
+          <td align="right" valign="top">
+            <label htmlFor="wd-assign-to"></label>Assign
+          </td>
           <td>
             <label htmlFor="wd-assign-to">Assign to</label> <br />
             <input
@@ -109,7 +110,6 @@ export default function AssignmentEditor() {
               id="wd-assign-to"
               value="Everyone"
             />
-            
           </td>
           <br />
           <br />
@@ -151,17 +151,16 @@ export default function AssignmentEditor() {
                 </td>
               </tr>
             </table>
-                        <br />
+            <br />
           </td>
         </tr>
         {/* Complete on your own */}
       </table>
       <hr />
-            <div style={{ float: "right" }}>
-              <button>Cancel</button>
-              <button>Save</button>
-            </div>
-
+      <div style={{ float: "right" }}>
+        <button>Cancel</button>
+        <button>Save</button>
+      </div>
     </div>
   );
 }
