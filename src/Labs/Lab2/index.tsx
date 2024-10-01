@@ -7,6 +7,8 @@ import Margins from "./Margins";
 import Corners from "./Corners";
 import Dimensions from "./Dimensions";
 import Positions from "./Positions";
+import GridLayout from "./GridLayout";
+import Float from "./Float";
 export default function Lab2() {
   return (
     <div id="wd-lab2">
@@ -74,6 +76,8 @@ export default function Lab2() {
       <Corners/>
       <Dimensions/>
       <Positions/>
+      <Float/>
+      <GridLayout/>
     </div>
   );
 }
