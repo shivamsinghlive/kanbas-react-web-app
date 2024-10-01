@@ -15,16 +15,14 @@ export default function Home() {
         <button>+ Module</button>
       </div>
 
-      <table id="wd-home">
-        <tr>
-          <td valign="top">
-            <Modules />
-          </td>
-          <td valign="top">
-            <CourseStatus />
-          </td>
-        </tr>
-      </table>
+      <div className="d-flex" id="wd-home">
+        <div className="flex-fill">
+          <Modules />
+        </div>
+        <div className="d-none d-md-block">
+          <CourseStatus />
+        </div>{" "}
+      </div>
     </div>
   );
 }
