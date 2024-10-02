@@ -1,7 +1,14 @@
 import { MdDoNotDisturbAlt } from "react-icons/md";
-import { FaCheckCircle } from "react-icons/fa";
+import { FaBell, FaCheckCircle } from "react-icons/fa";
 import { BiImport } from "react-icons/bi";
 import { LiaFileImportSolid } from "react-icons/lia";
+import { BsFileBarGraph } from "react-icons/bs";
+import { IoIosHome } from "react-icons/io";
+import { SiGoogleanalytics } from "react-icons/si";
+import { TfiAnnouncement } from "react-icons/tfi";
+
+
+
 
 export default function CourseStatus() {
     return (
@@ -36,6 +43,29 @@ export default function CourseStatus() {
     <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
       <LiaFileImportSolid className="me-2 fs-5" /> Import from Commons </button>
     {/* Complete the rest of the buttons */}
+
+    <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
+      <IoIosHome className="me-2 fs-5" /> Choose Home Page </button>
+
+      <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
+      <SiGoogleanalytics className="me-2 fs-5" /> View Course Stream </button>
+
+      <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
+      <TfiAnnouncement className="me-2 fs-5" /> New Announcement </button>
+
+
+      <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
+      <SiGoogleanalytics className="me-2 fs-5" /> New Analytics </button>
+
+
+
+
+      <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
+      <FaBell className="me-2 fs-5" />       View Course Notifications
+      </button>
+
+
+
   </div>
   );}
   

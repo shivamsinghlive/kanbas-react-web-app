@@ -18,9 +18,9 @@ export default function Account() {
             <Routes>
               <Route
                 path="/"
-                element={<Navigate to="/Kanbas/Account/Sigin" />}
+                element={<Navigate to="/Kanbas/Account/Signin" />}
               ></Route>
-              <Route path="/Sigin" element={<Signin />}></Route>
+              <Route path="/Signin" element={<Signin />}></Route>
               <Route path="/Profile" element={<Profile />}></Route>
               <Route path="/Signup" element={<Signup />}></Route>
             </Routes>
