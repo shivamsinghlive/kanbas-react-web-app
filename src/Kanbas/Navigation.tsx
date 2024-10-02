@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { AiOutlineDashboard } from "react-icons/ai";
-import { IoCalendarOutline } from "react-icons/io5";
+import { IoCalendarNumberOutline, IoCalendarOutline, IoSettingsOutline } from "react-icons/io5";
 import { LiaBookSolid, LiaCogSolid } from "react-icons/lia";
 import { FaInbox, FaRegCircleUser } from "react-icons/fa6";
+import { FaRegCalendarAlt } from "react-icons/fa";
 
 export default function KanbasNavigation() {
   return (
@@ -20,6 +21,7 @@ export default function KanbasNavigation() {
       >
         <img src="/images/neu.svg" width="75px" />
       </a>
+      <br />
       <Link
         to="/Kanbas/Account"
         id="wd-account-link"
@@ -28,7 +30,7 @@ export default function KanbasNavigation() {
         <FaRegCircleUser className="fs-1 text text-white" />
         Account{" "}
       </Link>
-      <br />
+      
       <Link
         to="/Kanbas/Dashboard"
         id="wd-dashboard-link"
@@ -47,23 +49,25 @@ export default function KanbasNavigation() {
         <LiaBookSolid className="fs-1 text-danger" />
         Courses{" "}
       </Link>
-      <br />
+      
       {/* complete styling the rest of the links */}
 
-      <br />
-      <Link to="/Kanbas/Dashboard" id="wd-course-link">
-        Courses
-      </Link>
-      <br />
-      <Link to="/Kanbas/Calendar" id="wd-calendar-link">
+      
+      
+      <Link to="/Kanbas/Calendar" id="wd-calendar-link" className="list-group-item text-center border-0 bg-black text-white">
+      <IoCalendarNumberOutline className="fs-1 text-danger" />
         Calendar
       </Link>
-      <br />
-      <Link to="/Kanbas/Inbox" id="wd-inbox-link">
+      
+      <Link to="/Kanbas/Inbox" id="wd-inbox-link" className="list-group-item text-center border-0 bg-black text-white">
+      <FaInbox className="fs-1 text-danger"/><br />
+
         Inbox
       </Link>
-      <br />
-      <Link to="/Labs" id="wd-labs-link">
+    
+      <Link to="/Labs" id="wd-labs-link" className="list-group-item text-center border-0 bg-black text-white">
+      <IoSettingsOutline className="fs-1 text-danger" /><br />
+
         Labs
       </Link>
       <br />
