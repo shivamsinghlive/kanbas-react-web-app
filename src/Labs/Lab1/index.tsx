@@ -241,7 +241,7 @@ export default function Lab1() {
 
 
                 Please
-                <a id="wd-github" href="https://github.com/paramj6599/WebDev">visit the GitHub repository</a>.
+                <a id="wd-github" href="https://github.com/shivamsinghlive/kanbas-react-web-app/">visit the GitHub repository</a>.
 
 
 
