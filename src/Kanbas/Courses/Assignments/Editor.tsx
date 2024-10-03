@@ -374,7 +374,8 @@ export default function AssignmentEditor() {
               <br />
               <label htmlFor="wd-due-date">Due</label>
               <br />
-              <input type="date" id="wd-due-date" value="2024-05-13" />
+              <input type="date" id="wd-due-date" value="2024-05-13" /><FaRegCalendarAlt />
+
               <br />
               <br />
 
@@ -388,7 +389,9 @@ export default function AssignmentEditor() {
                       id="wd-available-from"
                       value="2024-05-06"
                     />
-                    s
+                    <FaRegCalendarAlt />
+
+                    
                   </td>
                   <td>
                     <label htmlFor="wd-available-until">Until</label>
@@ -398,6 +401,8 @@ export default function AssignmentEditor() {
                       id="wd-available-until"
                       value="2024-05-20"
                     />
+                    <FaRegCalendarAlt />
+
                   </td>
                 </tr>
               </table>
