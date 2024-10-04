@@ -871,6 +871,8 @@ export default function AssignmentEditor() {
       <div className="mb-3 custom-border-div">
         <p id="wd-description">
           The assignment is{" "}
+          <span className="text-danger">available online</span> <br />
+          <br />
           <span>
           Submit a link to the landing page of your Web application running on </span>
           
