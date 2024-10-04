@@ -13,6 +13,6 @@ export default function Signup()
             className="btn btn-primary w-100">
             Sign up </Link>
       <Link id="wd-signup-link" to="/Kanbas/Account/Signin">Sign in</Link>
-        </div>
-    )
+        </div>
+    )
 }

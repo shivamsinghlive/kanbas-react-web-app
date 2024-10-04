@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-
 export default function CoursesNavigation() {
   return (
     <div id="wd-courses-navigation" className="wd list-group fs-5 rounded-0">
@@ -18,5 +17,6 @@ export default function CoursesNavigation() {
     <Link to="/Kanbas/Courses/1234/People" id="wd-course-people-link"
       className="list-group-item text-danger border border-0" > People </Link>
   </div>
-  );
-}
+
+);}
+

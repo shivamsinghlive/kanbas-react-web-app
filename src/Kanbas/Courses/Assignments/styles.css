@@ -34,3 +34,7 @@ a {
     border: 1px solid lightgrey;
 }
 
+.custom-border-editor {
+    border:1px solid lightgrey;
+    /* padding: 105px; */
+}
