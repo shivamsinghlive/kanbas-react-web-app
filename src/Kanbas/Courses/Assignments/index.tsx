@@ -156,59 +156,80 @@ export default function Assignments() {
             <IoEllipsisVertical />
           </div>
         </div>
-        <ul className="list-group list-group-flush custom-border">
-          {[
-            {
-              title: "A1",
-              availability: "May 6 at 12:00 am",
-              due: "May 13 at 11:59 pm",
-            },
-            {
-              title: "A2",
-              availability: "May 13 at 12:00 am",
-              due: "May 20 at 11:59 pm",
-            },
-            {
-              title: "A3",
-              availability: "May 20 at 12:00 am",
-              due: "May 27 at 11:59 pm",
-            },
-          ].map((assignment, index) => (
-            <li
-              key={index}
-              className="list-group-item d-flex align-items-start custom-border"
-            >
-              <div id="container">
-                <div>
+        <ul id="wd-assignments" className="list-group rounded-0 module-container">
+          <li className="wd-assignment list-group-item p-0 mb-5 fs-5 border-gray">
+            <div className="wd-title p-3 ps-2 bg-light">
                   <BsGripVertical className="me-2 fs-3" />
-                  <PiNotePencilFill className=" text-success me-2  fs-5" />
+                  <GoTriangleDown className="me-2 fs-4"/>
+                    ASSIGNMENTS
+                  <AssignmentControlButtons/>
+            </div>
+            <ul className="wd-lessons list-group rounded-0">
+              <li className="wd-lesson d-flex border-bottom border-gray">
+                <div className="d-flex align-items-center">
+                  <BsGripVertical className="ms-2 fs-4" />
+                  <FaRegEdit className="ms-3 text-success fs-4"/>
                 </div>
-
-                <div className="flex-grow-1">
-                  <a
-                    href="#/Kanbas/Courses/1234/Assignments/123"
-                    className="fw-bold"
-                  >
-                    {assignment.title}
+                <div className="fs-6 assignment-padding">
+                  <a className="wd-assignment-link text-decoration-none text-dark ms-3"
+                    href="#/Kanbas/Courses/1234/Assignments/123">
+                  <strong>A1</strong><br/>
                   </a>
-                  {/* <div style={{marginTop:"0px"}}> */}
-
-                  {/* </div> */}
-
-                  <div>
-                    <span className="text-danger">Multiple Modules</span> |{" "}
-                    <b>Not available until</b> {assignment.availability} |{" "}
-                    <br />
-                    <b>Due</b> {assignment.due} | 100 pts
+                  <div className="ms-3 text-muted">
+                  <span className="text-danger">Multiple Modules </span>| <span className="text-dark">Not available until</span> May 6 at 12:00am |<br/><span className="text-dark">Due</span> May 13 at 11:59pm | 100pts
                   </div>
                 </div>
-
-                <div className="d-flex justify-content-lg-end">
-                  <LessonControlButtons />
+                <div className="ms-auto d-flex align-items-center">
+                <span className="me-4"> 
+                  <GreenCheckmark />
+                </span>
+                  <IoEllipsisVertical className="me-4"/>
                 </div>
-              </div>
-            </li>
-          ))}
+              </li>
+              <li className="wd-lesson d-flex border-bottom border-gray">
+                <div className="d-flex align-items-center">
+                  <BsGripVertical className="ms-2 fs-4" />
+                  <FaRegEdit className="ms-3 text-success fs-4"/>
+                </div>
+                <div className="fs-6 assignment-padding">
+                  <a className="wd-assignment-link text-decoration-none text-dark ms-3"
+                    href="#/Kanbas/Courses/1234/Assignments/123">
+                  <strong>A2</strong><br/>
+                  </a>
+                  <div className="ms-3 text-muted">
+                  <span className="text-danger">Multiple Modules </span>| <span className="text-dark">Not available until</span> May 13 at 12:00am |<br/><span className="text-dark">Due</span> May 20 at 11:59pm | 100pts
+                  </div>
+                </div>
+                <div className="ms-auto d-flex align-items-center">
+                <span className="me-4"> 
+                  <GreenCheckmark />
+                </span>
+                  <IoEllipsisVertical className="me-4"/>
+                </div>
+              </li>  
+              <li className="wd-lesson d-flex border-bottom border-gray">
+                <div className="d-flex align-items-center">
+                  <BsGripVertical className="ms-2 fs-4" />
+                  <FaRegEdit className="ms-3 text-success fs-4"/>
+                </div>
+                <div className="fs-6 assignment-padding">
+                  <a className="wd-assignment-link text-decoration-none text-dark ms-3"
+                    href="#/Kanbas/Courses/1234/Assignments/123">
+                  <strong>A3</strong><br/>
+                  </a>
+                  <div className="ms-3 text-muted">
+                  <span className="text-danger">Multiple Modules </span>| <span className="text-dark">Not available until</span> May 20 at 12:00am |<br/><span className="text-dark">Due</span> May 27 at 11:59pm | 100pts
+                  </div>
+                </div>
+                <div className="ms-auto d-flex align-items-center">
+                <span className="me-4"> 
+                  <GreenCheckmark />
+                </span>
+                  <IoEllipsisVertical className="me-4"/>
+                </div>
+              </li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
@@ -419,3 +440,8 @@ export default function Assignments() {
 //         </ul>
 //       </div>
 //   );}
+
+
+
+
+//
