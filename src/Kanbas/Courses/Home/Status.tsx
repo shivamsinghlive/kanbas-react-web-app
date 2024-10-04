@@ -6,10 +6,11 @@ import { AiOutlineHome } from "react-icons/ai";
 import { BsGraphUp } from "react-icons/bs";
 import { IoHomeSharp, IoNotificationsOutline } from "react-icons/io5";
 import { CiBullhorn } from "react-icons/ci";
+import Margins from "../../../Labs/Lab2/Margins";
 
 export default function CourseStatus() {
     return (
-        <div id="wd-course-status" style={{ width: "300px" }}>
+        <div id="wd-course-status" style={{ width: "300px" , marginLeft:"10px"}}>
             <h2>Course Status</h2>
             <div className="d-flex">
                 <div className="w-50 pe-1">
