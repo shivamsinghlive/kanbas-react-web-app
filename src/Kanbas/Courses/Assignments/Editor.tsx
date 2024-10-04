@@ -871,10 +871,10 @@ export default function AssignmentEditor() {
       <div className="mb-3 custom-border-div">
         <p id="wd-description">
           The assignment is{" "}
-          <span className="text-danger">available online</span> <br />
-          <br />
-          Submit a link to the landing page of your Web application running on
-          Netlify.
+          <span>
+          Submit a link to the landing page of your Web application running on </span>
+          
+          <a href="https://a1-kanbas-react-web-app.netlify.app/#/Labs/Lab1" style={{textDecorationStyle:"dotted" , textDecorationColor:"red"}} >Netlify</a>.
           <br />
           <br />
           The landing page should include the following: <br />
@@ -882,11 +882,11 @@ export default function AssignmentEditor() {
           <ul>
             <li>Your full name and section</li>
             <li>Your full name and section assignmments</li>
-            <li>Link to the Kanbas application</li>
+            <li>Link to the <a href="https://a1-kanbas-react-web-app.netlify.app/#/Kanbas/Account/Signin" style={{textDecorationStyle:"dotted" , textDecorationColor:"red"}} >Kanbas</a> application</li>
             <li>Links to all relevant source code repositories</li>
           </ul>
           <br />
-          The kanbas apllication should include a link to naviagate back to the
+          The <a href="https://a1-kanbas-react-web-app.netlify.app/#/Kanbas/Account/Signin" style={{textDecorationStyle:"dotted" , textDecorationColor:"red"}} >kanbas</a> apllication should include a link to naviagate back to the
           landing page.
         </p>
       </div>
