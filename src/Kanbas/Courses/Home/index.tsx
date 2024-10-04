@@ -1,5 +1,6 @@
 import Modules from "../Modules";
-import CourseStatus from './status'
+import CourseStatus from "./status";
+// import CourseStatus from './status'
 export default function Home() {
   return (
 
