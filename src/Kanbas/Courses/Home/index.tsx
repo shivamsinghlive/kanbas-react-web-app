@@ -9,7 +9,7 @@ export default function Home() {
         <Modules />
       </div>
 
-      <div className="d-none d-md-block">
+      <div className="d-none hidden-md d-md-block">
         <CourseStatus />
       </div>
     </div>
