@@ -123,57 +123,85 @@ export default function CoursesNavigation() {
       {/* ))} */}
 
       <Link
-        to="/Kanbas/Courses/1234/Home"
+        to={`/Kanbas/Courses/${cid}/Home`}
         id="wd-course-home-link"
-        className="list-group-item active border border-0"
+        className={`list-group-item  border border-0 ${
+          pathname.includes("Home")
+            ? "active"
+            : "text-danger"
+        }`}
       >
         {" "}
         Home{" "}
       </Link>
       <Link
-        to="/Kanbas/Courses/1234/Modules"
+        to={`/Kanbas/Courses/${cid}/Modules`}
         id="wd-course-modules-link"
-        className="list-group-item text-danger border border-0"
+        className={`list-group-item  border border-0 ${
+          pathname.includes("Modules")
+            ? "active"
+            : "text-danger"
+        }`}
       >
         {" "}
         Modules{" "}
       </Link>
       <Link
-        to="/Kanbas/Courses/1234/Piazza"
+        to={`/Kanbas/Courses/${cid}/Piazza`}
         id="wd-course-piazza-link"
-        className="list-group-item text-danger border border-0"
+        className={`list-group-item  border border-0 ${
+          pathname.includes("Piazza")
+            ? "active"
+            : "text-danger"
+        }`}
       >
         {" "}
         Piazza{" "}
       </Link>
       <Link
-        to="/Kanbas/Courses/1234/Zoom"
+        to={`/Kanbas/Courses/${cid}/Zoom`}
         id="wd-course-zoom-link"
-        className="list-group-item text-danger border border-0"
+        className={`list-group-item  border border-0 ${
+          pathname.includes("Zoom")
+            ? "active"
+            : "text-danger"
+        }`}
       >
         {" "}
         Zoom{" "}
       </Link>
       <Link
-        to="/Kanbas/Courses/1234/Assignments"
+        to={`/Kanbas/Courses/${cid}/Assignments`}
         id="wd-course-quizzes-link"
-        className="list-group-item text-danger border border-0"
+        className={`list-group-item  border border-0 ${
+          pathname.includes("Assignments")
+            ? "active"
+            : "text-danger"
+        }`}
       >
         {" "}
         Assignments{" "}
       </Link>
       <Link
-        to="/Kanbas/Courses/1234/Quizzes"
+        to={`/Kanbas/Courses/${cid}/Quizzes`}
         id="wd-course-assignments-link"
-        className="list-group-item text-danger border border-0"
+        className={`list-group-item  border border-0 ${
+          pathname.includes("Quizzes")
+            ? "active"
+            : "text-danger"
+        }`}
       >
         {" "}
         Quizzes{" "}
       </Link>
       <Link
-        to="/Kanbas/Courses/1234/People"
+        to={`/Kanbas/Courses/${cid}/People`}
         id="wd-course-people-link"
-        className="list-group-item text-danger border border-0"
+        className={`list-group-item  border border-0 ${
+          pathname.includes("People")
+            ? "active"
+            : "text-danger"
+        }`}
       >
         {" "}
         People{" "}
