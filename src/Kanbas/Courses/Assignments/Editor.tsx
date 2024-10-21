@@ -852,13 +852,21 @@
 import { relative } from "path";
 import { RiArrowDropDownFill } from "react-icons/ri";
 import * as db from "../../Database";
-import { useParams } from "react-router";
+import { useLocation, useParams } from "react-router";
 export default function AssignmentEditor() {
-
-  const assignments=db.assignments;
+  const assignments = db.assignments;
   // const courses=db.
-  const {cid,aid}=useParams();
-  console.log("from assignment editor " + cid);
+  const { cid, aid } = useParams();
+  const { pathname } = useLocation();
+  console.log("from assignment editor " + cid + pathname);
+  const assignPath =
+    "/" +
+    pathname.split("/")[0] +
+    "/" +
+    pathname.split("/")[1] +
+    pathname.split("/")[2] +
+    "/" +
+    pathname.split("/")[3];
   return (
     <div
       id="wd-assignments-editor"
@@ -877,13 +885,22 @@ export default function AssignmentEditor() {
       {/* The assignment is available online Submit a link to the landing page of */}
       <div className="mb-3 custom-border-div">
         <p id="wd-description">
-          The assignment {" "} {aid} is
+          The assignment {aid} is
           <span className="text-danger"> available online</span> <br />
           <br />
           <span>
-          Submit a link to the landing page of your Web application running on </span>
-          
-          <a href="https://effervescent-salamander-21e823.netlify.app/#/Labs/Lab3" style={{textDecorationStyle:"dotted" , textDecorationColor:"red"}} >Netlify</a>.
+            Submit a link to the landing page of your Web application running on{" "}
+          </span>
+          <a
+            href="https://effervescent-salamander-21e823.netlify.app/#/Labs/Lab3"
+            style={{
+              textDecorationStyle: "dotted",
+              textDecorationColor: "red",
+            }}
+          >
+            Netlify
+          </a>
+          .
           <br />
           <br />
           The landing page should include the following: <br />
@@ -891,12 +908,34 @@ export default function AssignmentEditor() {
           <ul>
             <li>Your full name and section</li>
             <li>Your full name and section assignmments</li>
-            <li>Link to the <a href="https://effervescent-salamander-21e823.netlify.app/#/Kanbas/Account/Signin" style={{textDecorationStyle:"dotted" , textDecorationColor:"red"}} >Kanbas</a> application</li>
+            <li>
+              Link to the{" "}
+              <a
+                href="https://effervescent-salamander-21e823.netlify.app/#/Kanbas/Account/Signin"
+                style={{
+                  textDecorationStyle: "dotted",
+                  textDecorationColor: "red",
+                }}
+              >
+                Kanbas
+              </a>{" "}
+              application
+            </li>
             <li>Links to all relevant source code repositories</li>
           </ul>
           <br />
-          The <a href="https://effervescent-salamander-21e823.netlify.app/#/Kanbas/Account/Signin" style={{textDecorationStyle:"dotted" , textDecorationColor:"red"}} >kanbas</a> apllication should include a link to naviagate back to the
-          landing page.
+          The{" "}
+          <a
+            href="https://effervescent-salamander-21e823.netlify.app/#/Kanbas/Account/Signin"
+            style={{
+              textDecorationStyle: "dotted",
+              textDecorationColor: "red",
+            }}
+          >
+            kanbas
+          </a>{" "}
+          apllication should include a link to naviagate back to the landing
+          page.
         </p>
       </div>
 
@@ -1175,15 +1214,20 @@ export default function AssignmentEditor() {
       <hr />
 
       <div className="pe-3">
-        <button id="wd-assignment-save" className="btn btn-danger float-end">
-          Save
-        </button>
-        <button
-          id="wd-assignment-cancel"
-          className="btn btn-secondary float-end me-2"
-        >
-          Cancel
-        </button>
+        <a href={`#/Kanbas/Courses/${cid}/Assignments`}>
+          <button id="wd-assignment-save" className="btn btn-danger float-end">
+            {/* <a href={`/Kanbas/Courses/${cid}/Assignments`}>Save</a> */}
+            Save
+          </button>
+        </a>
+        <a href={`#/Kanbas/Courses/${cid}/Assignments`}>
+          <button
+            id="wd-assignment-cancel"
+            className="btn btn-secondary float-end me-2"
+          >
+            Cancel
+          </button>
+        </a>
       </div>
     </div>
 
