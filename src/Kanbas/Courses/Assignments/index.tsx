@@ -11,6 +11,17 @@ import { json } from "stream/consumers";
 export default function Assignments() {
   const assignments = db.assignments;
   const { cid } = useParams();
+  console.log("from editor line 14", cid);
+  assignments.filter((assign)=> 
+  {
+    if(assign.course===cid)
+    {
+      console.log("assignment " + JSON.stringify(assign));
+    }
+
+  }
+
+    )
   return (
     <div id="wd-assignments ">
       <div className="d-flex justify-content-between align-items-center mb-3">
@@ -63,43 +74,37 @@ export default function Assignments() {
             id="wd-assignment-list"
             className="wd-lessons list-group rounded-0"
           >
-             {assignments
-                .filter((assignment: any) => assignment.course == cid)
-                .map((assign: any) => (
-            <li className="wd-assignment-list-item list-group-item p-3 ps-1 border-success border-top-0 border-end-0 border-bottom-0 border-5">
-              <BsGripVertical className="me-2 fs-3" />
-              <PiNotePencilFill className="me-2 fs-3 " />
-             
-                  <span>
-                    {assign.assignments.map((assignName: any) => (
+            {assignments
+              .filter((assignment: any) => assignment.course == cid)
+              .map((assign: any) => (
+                // console.log("from editor line 72" + JSON.stringify(assign.assignments))
+                
+                <li className="wd-assignment-list-item list-group-item p-3 ps-1 border-success border-top-0 border-end-0 border-bottom-0 border-5">
+                  
+                    <>
+                      <BsGripVertical className="me-2 fs-3" />
+                      <PiNotePencilFill className="me-2 fs-3 " />
+
                       <a
                         className="wd-assignment-link "
-                        href={`#/Kanbas/Courses/${cid}/Assignments/${assignName.id}`}
+                        href={`#/Kanbas/Courses/${cid}/Assignments/${assign._id}`}
                       >
                         {/* A1 - ENV + HTML */}
-                        {/* {assign.assignments.title}
-                         */}
-                        {/* {assign.map((assignment:any)=>
-                   {assignment.title}
 
-                   )} */}
-
-                        {/* // console.log(JSON.stringify(assignName.title) + " from assignment editor line 89") */}
-                        {/* // {assignName} */}
-                        {assignName.title}
+                        {assign._id}
                       </a>
-                    ))}
-                    <div>
-                      <span className="text-danger">Multiple Modules </span> |{" "}
-                      <b>Not available unitl</b> May 6 at 12:00 am | <br />{" "}
-                      <b>Due</b> May 13 at 11:59 pm | 100 pts
-                    </div>
-                  </span>
-             
-
-              <LessonControlButtons />
-            </li>
-               ))}
+                      <div>
+                        <span className="text-danger">Multiple Modules </span> |{" "}
+                        <b>Not available unitl</b>{" "}
+                        TBD| <br /> <b>Due</b>{" "}
+                        May 13 at 11:59 pm | 100 pts
+                      </div>
+                      <LessonControlButtons />
+                    </>
+                  
+                  {/* </span> */}
+                </li>
+              ))}
             {/* <li className="wd-assignment-list-item list-group-item p-3 ps-1 border-success border-top-0 border-end-0 border-bottom-0 border-5">
               <BsGripVertical className="me-2 fs-3" />
               <PiNotePencilFill className="me-2 fs-3 " />

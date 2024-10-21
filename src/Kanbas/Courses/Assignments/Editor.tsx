@@ -857,14 +857,14 @@ export default function AssignmentEditor() {
 
   const assignments=db.assignments;
   // const courses=db.
-  const {cid}=useParams();
+  const {cid,aid}=useParams();
   console.log("from assignment editor " + cid);
   return (
     <div
       id="wd-assignments-editor"
       style={{ marginLeft: "2%", marginRight: "2%" }}
     >
-      <label htmlFor="wd-name">Assignment Name</label>
+      <label htmlFor="wd-name">Assignment Name </label>
       <br />
       <input id="wd-name" value="A1" className="form-control mb-2" />
       <br />
@@ -877,7 +877,7 @@ export default function AssignmentEditor() {
       {/* The assignment is available online Submit a link to the landing page of */}
       <div className="mb-3 custom-border-div">
         <p id="wd-description">
-          The assignment is{" "}
+          The assignment is{" "} {aid}
           <span className="text-danger">available online</span> <br />
           <br />
           <span>

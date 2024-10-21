@@ -27,8 +27,9 @@ export default function CoursesNavigation() {
   ];
 
   const { pathname } = useLocation();
+  
   const { cid } = useParams();
-  console.log("inside navigation ... " + cid);
+  console.log("inside navigation ... " + JSON.stringify(useParams()));
 
   // return (
   //   <div id="wd-courses-navigation" className="wd list-group fs-5 rounded-0">
