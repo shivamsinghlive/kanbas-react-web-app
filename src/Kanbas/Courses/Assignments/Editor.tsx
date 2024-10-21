@@ -858,6 +858,8 @@ export default function AssignmentEditor() {
   // const courses=db.
   const { cid, aid } = useParams();
   const { pathname } = useLocation();
+  // finding name of assignment
+  const assignmentName=assignments.find((assign:any)=>assign.course===cid);
   console.log("from assignment editor " + cid + pathname);
   const assignPath =
     "/" +
@@ -874,7 +876,7 @@ export default function AssignmentEditor() {
     >
       <label htmlFor="wd-name">Assignment Name </label>
       <br />
-      <input id="wd-name" value={aid} className="form-control mb-2" />
+      <input id="wd-name" value={`${assignmentName?.title}`} className="form-control mb-2" />
       <br />
       {/* <textarea
         id="wd-description"

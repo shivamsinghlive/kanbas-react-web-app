@@ -91,7 +91,7 @@ export default function Assignments() {
                       >
                         {/* A1 - ENV + HTML */}
 
-                        {assign._id}
+                        {assign._id}-{assign.title}
                       </a>
                       <div>
                         <span className="text-danger">Multiple Modules </span> |{" "}
