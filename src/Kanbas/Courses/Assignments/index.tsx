@@ -96,7 +96,7 @@ export default function Assignments() {
                       <div>
                         <span className="text-danger">Multiple Modules </span> |{" "}
                         <b>Not available unitl</b>{" "}
-                        TBD| <br /> <b>Due</b>{" "}
+                        {assign.availableDate}| <br /> <b>Due</b>{" "}
                         May 13 at 11:59 pm | 100 pts
                       </div>
                       <LessonControlButtons />

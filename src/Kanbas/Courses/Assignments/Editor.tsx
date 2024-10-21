@@ -866,7 +866,7 @@ export default function AssignmentEditor() {
     >
       <label htmlFor="wd-name">Assignment Name </label>
       <br />
-      <input id="wd-name" value="A1" className="form-control mb-2" />
+      <input id="wd-name" value={aid} className="form-control mb-2" />
       <br />
       {/* <textarea
         id="wd-description"
@@ -877,13 +877,13 @@ export default function AssignmentEditor() {
       {/* The assignment is available online Submit a link to the landing page of */}
       <div className="mb-3 custom-border-div">
         <p id="wd-description">
-          The assignment is{" "} {aid}
-          <span className="text-danger">available online</span> <br />
+          The assignment {" "} {aid} is
+          <span className="text-danger"> available online</span> <br />
           <br />
           <span>
           Submit a link to the landing page of your Web application running on </span>
           
-          <a href="https://a1-kanbas-react-web-app.netlify.app/#/Labs/Lab1" style={{textDecorationStyle:"dotted" , textDecorationColor:"red"}} >Netlify</a>.
+          <a href="https://effervescent-salamander-21e823.netlify.app/#/Labs/Lab3" style={{textDecorationStyle:"dotted" , textDecorationColor:"red"}} >Netlify</a>.
           <br />
           <br />
           The landing page should include the following: <br />
@@ -891,11 +891,11 @@ export default function AssignmentEditor() {
           <ul>
             <li>Your full name and section</li>
             <li>Your full name and section assignmments</li>
-            <li>Link to the <a href="https://a1-kanbas-react-web-app.netlify.app/#/Kanbas/Account/Signin" style={{textDecorationStyle:"dotted" , textDecorationColor:"red"}} >Kanbas</a> application</li>
+            <li>Link to the <a href="https://effervescent-salamander-21e823.netlify.app/#/Kanbas/Account/Signin" style={{textDecorationStyle:"dotted" , textDecorationColor:"red"}} >Kanbas</a> application</li>
             <li>Links to all relevant source code repositories</li>
           </ul>
           <br />
-          The <a href="https://a1-kanbas-react-web-app.netlify.app/#/Kanbas/Account/Signin" style={{textDecorationStyle:"dotted" , textDecorationColor:"red"}} >kanbas</a> apllication should include a link to naviagate back to the
+          The <a href="https://effervescent-salamander-21e823.netlify.app/#/Kanbas/Account/Signin" style={{textDecorationStyle:"dotted" , textDecorationColor:"red"}} >kanbas</a> apllication should include a link to naviagate back to the
           landing page.
         </p>
       </div>
