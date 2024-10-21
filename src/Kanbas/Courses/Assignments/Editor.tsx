@@ -851,7 +851,14 @@
 
 import { relative } from "path";
 import { RiArrowDropDownFill } from "react-icons/ri";
+import * as db from "../../Database";
+import { useParams } from "react-router";
 export default function AssignmentEditor() {
+
+  const assignments=db.assignments;
+  // const courses=db.
+  const {cid}=useParams();
+  console.log("from assignment editor " + cid);
   return (
     <div
       id="wd-assignments-editor"

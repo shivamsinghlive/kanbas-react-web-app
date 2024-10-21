@@ -4,8 +4,13 @@ import { PiNotePencilFill } from "react-icons/pi";
 import { FaCaretDown, FaPlus } from "react-icons/fa6";
 import { IoEllipsisVertical } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
+import { useParams } from "react-router";
+import * as db from "../../Database";
+import { json } from "stream/consumers";
 
 export default function Assignments() {
+  const assignments = db.assignments;
+  const { cid } = useParams();
   return (
     <div id="wd-assignments ">
       <div className="d-flex justify-content-between align-items-center mb-3">
@@ -17,7 +22,7 @@ export default function Assignments() {
             type="text"
             className="form-control border-start-0"
             placeholder=" 🔍 Search..."
-            style={{width:"75%"}}
+            style={{ width: "75%" }}
           />
         </div>
         <div>
@@ -35,12 +40,10 @@ export default function Assignments() {
       <ul id="wd-modules" className="list-group rounded-0 ">
         <li className="wd-module list-group-item p-0 mb-5 fs-5  ">
           <div className="wd-title p-3 ps-2 bg-secondary">
-            {/* <h3 id="wd-assignments-title"> */}
-              {" "}
-              <BsGripVertical className="me-2 fs-3" />
-              <FaCaretDown className="me-2 fs-3" />
-              ASSIGNMENTS
-            
+            {/* <h3 id="wd-assignments-title"> */}{" "}
+            <BsGripVertical className="me-2 fs-3" />
+            <FaCaretDown className="me-2 fs-3" />
+            ASSIGNMENTS
             <span className="d-flex justify-content-lg-end">
               {/* <div className="border border-1 radius-2 rounded-pill border-black ">
                 
@@ -60,33 +63,49 @@ export default function Assignments() {
             id="wd-assignment-list"
             className="wd-lessons list-group rounded-0"
           >
-          
+             {assignments
+                .filter((assignment: any) => assignment.course == cid)
+                .map((assign: any) => (
             <li className="wd-assignment-list-item list-group-item p-3 ps-1 border-success border-top-0 border-end-0 border-bottom-0 border-5">
-            <BsGripVertical className="me-2 fs-3" />
-            <PiNotePencilFill className="me-2 fs-3 " />
-              <span>
-                <a
-                  className="wd-assignment-link "
-                  href="#/Kanbas/Courses/1234/Assignments/123"
-                >
-                  A1 - ENV + HTML
-                </a>
-                <div>
-                  
-                  <span className="text-danger">Multiple Modules </span> |{" "}
-                  <b>Not available unitl</b> May 6 at 12:00 am | <br /> <b>Due</b> May
-                  13 at 11:59 pm | 100 pts
-                </div>
-              </span>
+              <BsGripVertical className="me-2 fs-3" />
+              <PiNotePencilFill className="me-2 fs-3 " />
+             
+                  <span>
+                    {assign.assignments.map((assignName: any) => (
+                      <a
+                        className="wd-assignment-link "
+                        href={`#/Kanbas/Courses/${cid}/Assignments/${assignName.id}`}
+                      >
+                        {/* A1 - ENV + HTML */}
+                        {/* {assign.assignments.title}
+                         */}
+                        {/* {assign.map((assignment:any)=>
+                   {assignment.title}
+
+                   )} */}
+
+                        {/* // console.log(JSON.stringify(assignName.title) + " from assignment editor line 89") */}
+                        {/* // {assignName} */}
+                        {assignName.title}
+                      </a>
+                    ))}
+                    <div>
+                      <span className="text-danger">Multiple Modules </span> |{" "}
+                      <b>Not available unitl</b> May 6 at 12:00 am | <br />{" "}
+                      <b>Due</b> May 13 at 11:59 pm | 100 pts
+                    </div>
+                  </span>
+             
 
               <LessonControlButtons />
             </li>
-            <li className="wd-assignment-list-item list-group-item p-3 ps-1 border-success border-top-0 border-end-0 border-bottom-0 border-5">
+               ))}
+            {/* <li className="wd-assignment-list-item list-group-item p-3 ps-1 border-success border-top-0 border-end-0 border-bottom-0 border-5">
               <BsGripVertical className="me-2 fs-3" />
               <PiNotePencilFill className="me-2 fs-3 " />
               <a
                 className="wd-assignment-link"
-                href="#/Kanbas/Courses/1234/Assignments/123"
+                href={`#/Kanbas/Courses/${cid}/Assignments/123`}
               >
                 A2 - CSS + BOOTSTRAP
               </a>
@@ -102,7 +121,7 @@ export default function Assignments() {
               <PiNotePencilFill className="me-2 fs-3 " />
               <a
                 className="wd-assignment-link"
-                href="#/Kanbas/Courses/1234/Assignments/123"
+                href={`#/Kanbas/Courses/${cid}/Assignments/123`}
               >
                 A3 - JAVASCRIPT + REACT
               </a>
@@ -111,7 +130,7 @@ export default function Assignments() {
               <span className="text-danger">Multiple Modules </span> |{" "}
               <b>Not available unitl</b> May 20 at 12:00 am | <br />
               <b>Due</b> May 27 at 11:59 pm | 100 pts
-            </li>
+            </li> */}
           </ul>
         </li>
       </ul>
