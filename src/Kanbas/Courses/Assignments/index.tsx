@@ -12,16 +12,11 @@ export default function Assignments() {
   const assignments = db.assignments;
   const { cid } = useParams();
   console.log("from editor line 14", cid);
-  assignments.filter((assign)=> 
-  {
-    if(assign.course===cid)
-    {
+  assignments.filter((assign) => {
+    if (assign.course === cid) {
       console.log("assignment " + JSON.stringify(assign));
     }
-
-  }
-
-    )
+  });
   return (
     <div id="wd-assignments ">
       <div className="d-flex justify-content-between align-items-center mb-3">
@@ -60,7 +55,7 @@ export default function Assignments() {
                 
                 <p >40% of Total </p>
                 </div> */}
-              <span className="card-header d-flex justify-content-between align-items-center bg-gray">
+              <span className="card-header d-flex justify-content-between align-items-center bg-gray border-bottom-5">
                 <span>40% of Total</span>
               </span>
               <FaPlus
@@ -78,30 +73,27 @@ export default function Assignments() {
               .filter((assignment: any) => assignment.course == cid)
               .map((assign: any) => (
                 // console.log("from editor line 72" + JSON.stringify(assign.assignments))
-                
+
                 <li className="wd-assignment-list-item list-group-item p-3 ps-1 border-success border-top-0 border-end-0 border-bottom-0 border-5">
-                  
-                    <>
-                      <BsGripVertical className="me-2 fs-3" />
-                      <PiNotePencilFill className="me-2 fs-3 " />
+                  <>
+                    <BsGripVertical className="me-2 fs-3" />
+                    <PiNotePencilFill className="me-2 fs-3 " />
 
-                      <a
-                        className="wd-assignment-link "
-                        href={`#/Kanbas/Courses/${cid}/Assignments/${assign._id}`}
-                      >
-                        {/* A1 - ENV + HTML */}
+                    <a
+                      className="wd-assignment-link"
+                      href={`#/Kanbas/Courses/${cid}/Assignments/${assign._id}`}
+                    >
+                      {/* A1 - ENV + HTML */}
+                      {assign._id}-{assign.title}
+                    </a>
+                    <div className="ms-5">
+                      <span className="text-danger " >Multiple Modules </span> |{" "}
+                      <b>Not available unitl</b> {assign.availableDate}| <br />{" "}
+                      <b>Due</b> {assign.dueDate}| 100 pts
+                    </div>
+                    <LessonControlButtons />
+                  </>
 
-                        {assign._id}-{assign.title}
-                      </a>
-                      <div>
-                        <span className="text-danger">Multiple Modules </span> |{" "}
-                        <b>Not available unitl</b>{" "}
-                        {assign.availableDate}| <br /> <b>Due</b>{" "}
-                        {assign.dueDate}| 100 pts
-                      </div>
-                      <LessonControlButtons />
-                    </>
-                  
                   {/* </span> */}
                 </li>
               ))}

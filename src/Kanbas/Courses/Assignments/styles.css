@@ -38,3 +38,7 @@ a {
     border:1px solid lightgrey;
     /* padding: 105px; */
 }
+
+.custom-multiple-module {
+    margin-left: 200px;
+}
