@@ -45,7 +45,7 @@ export default function Assignments() {
 
       <ul id="wd-modules" className="list-group rounded-0 ">
         <li className="wd-module list-group-item p-0 mb-5 fs-5  ">
-          <div className="wd-title p-3 ps-2 bg-secondary border-bottom-0">
+          <div className="wd-title p-3 ps-2 bg-secondary">
             {/* <h3 id="wd-assignments-title"> */}{" "}
             <BsGripVertical className="me-2 fs-3" />
             <FaCaretDown className="me-2 fs-3" />
@@ -76,7 +76,7 @@ export default function Assignments() {
 
                 <li className="wd-assignment-list-item list-group-item p-3 ps-1 border-success border-top-0 border-end-0 border-bottom-0 border-5">
                   <>
-                    <div className="border border-0 border-bottom-0 border-bottom-secondary">
+                    <div className="border border-0 border-bottom border-bottom-secondary">
                       <BsGripVertical className="me-2 fs-3" />
                       <PiNotePencilFill className="me-2 fs-3 " />
 
