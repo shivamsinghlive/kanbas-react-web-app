@@ -81,7 +81,7 @@ export default function Assignments() {
                       <PiNotePencilFill className="me-2 fs-3 " />
 
                       <a
-                        className="wd-assignment-link"
+                        className="wd-assignment-link text-decoration-none text-reset"
                         href={`#/Kanbas/Courses/${cid}/Assignments/${assign._id}`}
                       >
                         {/* A1 - ENV + HTML */}

@@ -859,7 +859,9 @@ export default function AssignmentEditor() {
   const { cid, aid } = useParams();
   const { pathname } = useLocation();
   // finding name of assignment
-  const assignmentName=assignments.find((assign:any)=>assign.course===cid);
+  const assignmentName = assignments.find(
+    (assign: any) => assign.course === cid
+  );
   console.log("from assignment editor " + cid + pathname);
   const assignPath =
     "/" +
@@ -876,7 +878,11 @@ export default function AssignmentEditor() {
     >
       <label htmlFor="wd-name">Assignment Name </label>
       <br />
-      <input id="wd-name" value={`${assignmentName?.title}`} className="form-control mb-2" />
+      <input
+        id="wd-name"
+        value={`${assignmentName?.title}`}
+        className="form-control mb-2"
+      />
       <br />
       {/* <textarea
         id="wd-description"
@@ -902,7 +908,7 @@ export default function AssignmentEditor() {
           >
             Netlify
           </a>
-          .
+          
           <br />
           <br />
           The landing page should include the following: <br />
@@ -1171,10 +1177,10 @@ export default function AssignmentEditor() {
                 <strong>Due</strong>
               </label>
               <input
-                type="date"
+                type="datetime-local"
                 id="wd-due-date"
                 name="due-date"
-                value="2024-05-13"
+                value="2024-05-13T23:59"
                 className="form-control mb-2"
               />
             </div>
@@ -1187,10 +1193,10 @@ export default function AssignmentEditor() {
                   <strong>Available From</strong>
                 </label>
                 <input
-                  type="date"
+                  type="datetime-local"
                   id="wd-available-from"
                   name="available-from"
-                  value="2024-05-06"
+                  value="2024-05-13T23:59"
                   className="form-control mb-2"
                 />
               </div>
@@ -1200,10 +1206,10 @@ export default function AssignmentEditor() {
                   <strong>Until</strong>
                 </label>
                 <input
-                  type="date"
+                  type="datetime-local"
                   id="wd-available-until"
                   name="available-until"
-                  value="2024-05-24"
+                  value="2024-05-13T23:59"
                   className="form-control mb-2"
                 />
               </div>
