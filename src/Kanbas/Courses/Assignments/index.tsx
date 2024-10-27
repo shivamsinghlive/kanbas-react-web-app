@@ -56,7 +56,7 @@ export default function Assignments() {
                 <p >40% of Total </p>
                 </div> */}
               <span className="card-header d-flex justify-content-between align-items-center ">
-                <span>40% of Total</span>
+              <span className="float-end" style={{marginRight:"20px"}}><button style={{ borderRadius: "10px"}}>40% of Total</button></span>
               </span>
               <FaPlus
                 className="position-relative me-2"
