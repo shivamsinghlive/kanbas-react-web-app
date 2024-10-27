@@ -45,7 +45,7 @@ export default function Assignments() {
 
       <ul id="wd-modules" className="list-group rounded-0 ">
         <li className="wd-module list-group-item p-0 mb-5 fs-5  ">
-          <div className="wd-title p-3 ps-2 bg-secondary">
+          <div className="wd-title p-3 ps-2 bg-secondary border-bottom-0">
             {/* <h3 id="wd-assignments-title"> */}{" "}
             <BsGripVertical className="me-2 fs-3" />
             <FaCaretDown className="me-2 fs-3" />
@@ -55,7 +55,7 @@ export default function Assignments() {
                 
                 <p >40% of Total </p>
                 </div> */}
-              <span className="card-header d-flex justify-content-between align-items-center bg-gray border-bottom-5">
+              <span className="card-header d-flex justify-content-between align-items-center ">
                 <span>40% of Total</span>
               </span>
               <FaPlus
@@ -76,22 +76,24 @@ export default function Assignments() {
 
                 <li className="wd-assignment-list-item list-group-item p-3 ps-1 border-success border-top-0 border-end-0 border-bottom-0 border-5">
                   <>
-                    <BsGripVertical className="me-2 fs-3" />
-                    <PiNotePencilFill className="me-2 fs-3 " />
+                    <div className="border border-0 border-bottom-0 border-bottom-secondary">
+                      <BsGripVertical className="me-2 fs-3" />
+                      <PiNotePencilFill className="me-2 fs-3 " />
 
-                    <a
-                      className="wd-assignment-link"
-                      href={`#/Kanbas/Courses/${cid}/Assignments/${assign._id}`}
-                    >
-                      {/* A1 - ENV + HTML */}
-                      {assign._id}-{assign.title}
-                    </a>
-                    <div className="ms-5">
-                      <span className="text-danger " >Multiple Modules </span> |{" "}
-                      <b>Not available unitl</b> {assign.availableDate}| <br />{" "}
-                      <b>Due</b> {assign.dueDate}| 100 pts
+                      <a
+                        className="wd-assignment-link"
+                        href={`#/Kanbas/Courses/${cid}/Assignments/${assign._id}`}
+                      >
+                        {/* A1 - ENV + HTML */}
+                        {assign._id}-{assign.title}
+                      </a>
+                      <div className="ms-5 ">
+                        <span className="text-danger ">Multiple Modules </span>{" "}
+                        | <b>Not available unitl</b> {assign.availableDate}|{" "}
+                        <br /> <b>Due</b> {assign.dueDate}| 100 pts
+                        <LessonControlButtons />
+                      </div>
                     </div>
-                    <LessonControlButtons />
                   </>
 
                   {/* </span> */}
