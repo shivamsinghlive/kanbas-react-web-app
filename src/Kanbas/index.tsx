@@ -10,6 +10,7 @@ import "./styles.css";
 
 import { useState } from "react";
 import Dashboard from "./Dashboard";
+import ProtectedRoute from "./Account/ProtectedRoute";
 // import Dashboard from ".Dashboard";
 // import Dashboard from "./Dashboard";
 
@@ -55,19 +56,19 @@ export default function Kanbas() {
           <Route
             path="Dashboard"
             element={
-              <Dashboard
+              <ProtectedRoute><Dashboard
                 courses={courses}
                 course={course}
                 setCourse={setCourse}
                 addNewCourse={addNewCourse}
                 deleteCourse={deleteCourse}
                 updateCourse={updateCourse}
-              />
+              /></ProtectedRoute>
             }
           />
           <Route
             path="Courses/:cid/*"
-            element={<Courses courses={courses} />}
+            element={<ProtectedRoute><Courses courses={courses} /></ProtectedRoute>}
           />
 
           <Route path="/Calendar" element={<h1>Calendar</h1>} />
