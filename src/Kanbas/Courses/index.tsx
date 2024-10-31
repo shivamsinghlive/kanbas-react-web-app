@@ -50,9 +50,9 @@ import Modules from "./Modules";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/Editor";
 import PeopleTable from "./People/Table";
-export default function Courses({ courses }: { courses: any[]; }) {
+export default function Courses({ courses }: { courses: any[] }) {
   const { cid } = useParams();
-  console.log("inside courses line 55" , cid);
+  console.log("inside courses line 55", cid);
   const course = courses.find((course) => course._id === cid);
   const { pathname } = useLocation();
   return (
@@ -72,7 +72,7 @@ export default function Courses({ courses }: { courses: any[]; }) {
             <Route path="Home" element={<Home />} />
             <Route path="Modules" element={<Modules />} />
             <Route path="Assignments" element={<Assignments />} />
-            <Route path="Assignments/:aid"  element={<AssignmentEditor />} />
+            <Route path="Assignments/:aid" element={<AssignmentEditor />} />
             <Route path="People" element={<PeopleTable />} />
           </Routes>
         </div>
