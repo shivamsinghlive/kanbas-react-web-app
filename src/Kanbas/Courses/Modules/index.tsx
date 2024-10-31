@@ -5,6 +5,7 @@ import ModuleControlButtons from "./ModulesControlButton";
 import * as db from "../../Database";
 import { useParams } from "react-router";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 export default function Modules() {
   const { cid } = useParams();
@@ -35,6 +36,9 @@ export default function Modules() {
   const updateModule = (module: any) => {
     setModules(modules.map((m) => (m._id === module._id ? module : m)));
   };
+  const dispatch = useDispatch();
+
+
 
   return (
     <div>
