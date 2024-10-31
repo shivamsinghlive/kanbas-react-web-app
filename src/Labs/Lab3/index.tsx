@@ -31,9 +31,13 @@ import VariableTypes from "./VariableTypes";
 import Highlight from "./Highlight";
 import AddPathParameters from "./AddPathParameters";
 import PathParameters from "./PathParameters";
+import { useSelector } from "react-redux";
+import { stat } from "fs";
 
 export default function Lab3() {
   console.log('Hello World!');
+
+  const {todos} = useSelector((state:any)=> state.todosReducer);
 
   return (
     <div>
@@ -83,6 +87,17 @@ export default function Lab3() {
       <hr />
       <PathParameters/>
       <AddPathParameters/>
+      <hr />
+
+      <ul className="list-group">
+        {todos.map((todo: any) => (
+          <li className="list-group-item" key={todo.id}>
+            {todo.title}
+          </li>
+        ))}
+      </ul>
+      <hr />
+
     </div>
   ); 
 }
