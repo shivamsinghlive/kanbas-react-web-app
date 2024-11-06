@@ -36,11 +36,20 @@ export default function Assignments() {
             <FaPlus className="me-1" />
             Group
           </button>
+
+          {/* 3.5.2 changes start */}
           {/* on clicking , it should take me to assignment editor screen  */}
-          <button className="btn btn-danger">
-            <FaPlus className="me-1" />
-            Assignment
-          </button>
+          <a
+            className="wd-assignment-link text-decoration-none text-reset"
+            href={`#/Kanbas/Courses/${cid}/Assignments/`}
+          >
+            {/* 3.5.2 changes end */}
+
+            <button className="btn btn-danger">
+              <FaPlus className="me-1" />
+              Assignment
+            </button>
+          </a>
         </div>
       </div>
 
@@ -57,7 +66,9 @@ export default function Assignments() {
                 <p >40% of Total </p>
                 </div> */}
               <span className="card-header d-flex justify-content-between align-items-center ">
-              <span className="float-end" style={{marginRight:"20px"}}><button style={{ borderRadius: "10px"}}>40% of Total</button></span>
+                <span className="float-end" style={{ marginRight: "20px" }}>
+                  <button style={{ borderRadius: "10px" }}>40% of Total</button>
+                </span>
               </span>
               <FaPlus
                 className="position-relative me-2"

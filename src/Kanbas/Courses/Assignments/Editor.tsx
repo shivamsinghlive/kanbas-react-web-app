@@ -853,8 +853,42 @@ import { relative } from "path";
 import { RiArrowDropDownFill } from "react-icons/ri";
 import * as db from "../../Database";
 import { useLocation, useParams } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { addAssignment } from "./reducer";
 export default function AssignmentEditor() {
   const assignments = db.assignments;
+  const assignmentFromReducer=useSelector((state:any)=> state.assignmentsReducer);
+  const dispatch=useDispatch();
+
+  const [aName, setAName]=useState();
+  const [description, setDescription]= useState();
+  const [points,setPoints]=useState();
+  const [dueDate,setDueDate]=useState();
+  const [availableFromDate, setAvailableFromDate]=useState();
+  const [availableUntilDate, setAvailableUntilDate]=useState();
+
+  const handleNameChange=(event:any)=>{
+    setAName(event.target.value);
+  }
+  const handleDescriptionChange=(event:any)=>{
+    setDescription(event.target.value)
+
+  }
+  const handlePointsChange=(event:any)=>{
+    setPoints(event.target.value)
+
+  }
+  const handleDueDateChange=(event:any)=>{
+    setDueDate(event?.target.value )
+
+  }
+  const handleAvailableFromDateChange=(event:any)=>{
+      setAvailableFromDate(event.target.value)
+  }
+  const handleAvailableUntilDateChange=(event:any)=>{
+    setAvailableUntilDate(event?.target.value)
+  }
   // const courses=db.
   const { cid, aid } = useParams();
   const { pathname } = useLocation();
@@ -882,6 +916,7 @@ export default function AssignmentEditor() {
         id="wd-name"
         value={`${assignmentName?.title}`}
         className="form-control mb-2"
+        onChange={handleNameChange}
       />
       <br />
       {/* <textarea
@@ -900,7 +935,7 @@ export default function AssignmentEditor() {
             Submit a link to the landing page of your Web application running on{" "}
           </span>
           <a
-            href="https://effervescent-salamander-21e823.netlify.app/#/Labs/Lab3"
+            href="https://effervescent-salamander-21e823.netlify.app/#/Labs/Lab4"
             style={{
               textDecorationStyle: "dotted",
               textDecorationColor: "red",
@@ -964,7 +999,7 @@ export default function AssignmentEditor() {
             </label>
           </div>
           <div className="w-50 pe-3">
-            <input id="wd-points" value={100} className="form-control mb-2" />
+            <input id="wd-points" value={100} className="form-control mb-2" onChange={handlePointsChange} />
           </div>
         </div>
         <br />
@@ -1182,6 +1217,7 @@ export default function AssignmentEditor() {
                 name="due-date"
                 value="2024-05-13T23:59"
                 className="form-control mb-2"
+                onChange={handleDueDateChange}
               />
             </div>
 
@@ -1198,6 +1234,7 @@ export default function AssignmentEditor() {
                   name="available-from"
                   value="2024-05-13T23:59"
                   className="form-control mb-2"
+                  onChange={handleAvailableFromDateChange}
                 />
               </div>
 
@@ -1211,6 +1248,7 @@ export default function AssignmentEditor() {
                   name="available-until"
                   value="2024-05-13T23:59"
                   className="form-control mb-2"
+                  onChange={handleAvailableUntilDateChange}
                 />
               </div>
             </div>
@@ -1223,7 +1261,7 @@ export default function AssignmentEditor() {
 
       <div className="pe-3">
         <a href={`#/Kanbas/Courses/${cid}/Assignments`}>
-          <button id="wd-assignment-save" className="btn btn-danger float-end">
+          <button id="wd-assignment-save" className="btn btn-danger float-end" onClick={()=>dispatch(addAssignment({title:aName, points:points}))}>
             {/* <a href={`/Kanbas/Courses/${cid}/Assignments`}>Save</a> */}
             Save
           </button>
