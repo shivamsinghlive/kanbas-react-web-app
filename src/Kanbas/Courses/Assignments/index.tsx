@@ -36,6 +36,7 @@ export default function Assignments() {
             <FaPlus className="me-1" />
             Group
           </button>
+          {/* on clicking , it should take me to assignment editor screen  */}
           <button className="btn btn-danger">
             <FaPlus className="me-1" />
             Assignment
