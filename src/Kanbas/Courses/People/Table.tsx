@@ -1,12 +1,18 @@
 import { FaUserCircle } from "react-icons/fa";
-import { useParams } from "react-router-dom";
 import * as db from "../../Database";
+import { useParams } from "react-router";
+import { useSelector } from "react-redux";
 
 export default function PeopleTable() {
   const { cid } = useParams();
-  const { users, enrollments } = db;
+  // const { users, enrollments } = db;
+  const { users } = db;
+  const enrollments = useSelector(
+    (state: any) => state.enrollmentsReducer.enrollments
+  );
+
   return (
-    <div id="wd-people-table" className="table-responsive">
+    <div id="wd-people-table">
       <table className="table table-striped">
         <thead>
           <tr>
@@ -20,9 +26,9 @@ export default function PeopleTable() {
         </thead>
         <tbody>
           {users
-            .filter((usr) =>
+            .filter((usr: any) =>
               enrollments.some(
-                (enrollment) =>
+                (enrollment: any) =>
                   enrollment.user === usr._id && enrollment.course === cid
               )
             )
@@ -30,7 +36,7 @@ export default function PeopleTable() {
               <tr key={user._id}>
                 <td className="wd-full-name text-nowrap">
                   <FaUserCircle className="me-2 fs-1 text-secondary" />
-                  <span className="wd-first-name">{user.firstName}</span>
+                  <span className="wd-first-name">{user.firstName}</span>{" "}
                   <span className="wd-last-name">{user.lastName}</span>
                 </td>
                 <td className="wd-login-id">{user.loginId}</td>
