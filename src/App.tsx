@@ -1,9 +1,10 @@
 import React from "react";
-import Kanbas from "./kanbas";
+
 import Labs from "./Labs";
 import { HashRouter, Route, Routes, Navigate } from "react-router-dom";
 import store from "./kanbas/store";
 import { Provider } from "react-redux";
+import Kanbas from "./kanbas";
 
 function App() {
   return (
