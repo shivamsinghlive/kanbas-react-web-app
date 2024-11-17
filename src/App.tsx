@@ -6,6 +6,7 @@ import store from "./kanbas/store";
 import { Provider } from "react-redux";
 import Kanbas from "./kanbas";
 
+
 function App() {
   return (
     <HashRouter>
