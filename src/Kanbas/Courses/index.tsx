@@ -11,7 +11,7 @@ import Home from "./Home/index";
 import Assignments from "./Assignments/index";
 import AssignmentEditor from "./Assignments/Editor";
 import { FaAlignJustify } from "react-icons/fa";
-import PeopleTable from "./People/table";
+import PeopleTable from "./People/PeopleTable";
 
 
 export default function Courses({ courses }: { courses: any[] }) {
