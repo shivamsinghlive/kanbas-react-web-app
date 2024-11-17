@@ -1,147 +1,114 @@
-import { BsGripVertical } from "react-icons/bs";
+import { BsGripVertical, BsPlus } from "react-icons/bs";
+import { TfiWrite } from "react-icons/tfi";
 import LessonControlButtons from "../Modules/LessonControlButtons";
-import { PiNotePencilFill } from "react-icons/pi";
-import { FaCaretDown, FaPlus } from "react-icons/fa6";
+import { CiSearch } from "react-icons/ci";
 import { IoEllipsisVertical } from "react-icons/io5";
-import { FaSearch } from "react-icons/fa";
 import { useParams } from "react-router";
-import * as db from "../../Database";
-import { json } from "stream/consumers";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteAssignment } from "./reducer";
+import { Link } from "react-router-dom";
+import ProtectedFacultyRoute from "../../Account/ProtectedFacultyRoute";
+import { FaPencil, FaTrash } from "react-icons/fa6";
+import AssignmentDeleteButton from "./AssignmentDeleteButton";
 
 export default function Assignments() {
-  const assignments = db.assignments;
+  const { assignments } = useSelector((state: any) => state.assignmentReducer);
+  const { currentUser } = useSelector((state: any) => state.accountReducer);
+  const dispatch = useDispatch();
   const { cid } = useParams();
-  console.log("from editor line 14", cid);
-  assignments.filter((assign) => {
-    if (assign.course === cid) {
-      console.log("assignment " + JSON.stringify(assign));
-    }
-  });
+
   return (
-    <div id="wd-assignments ">
-      <div className="d-flex justify-content-between align-items-center mb-3">
-        <div className="input-group" style={{ width: "70%" }}>
-          {/* <span className="input-group-text bg-white border-end-0">
-            <FaSearch />
-          </span> */}
-          <input
-            type="text"
-            className="form-control border-start-0"
-            placeholder=" 🔍 Search..."
-            style={{ width: "75%" }}
-          />
-        </div>
-        <div>
-          <button className="btn btn-secondary me-2">
-            <FaPlus className="me-1" />
-            Group
-          </button>
-
-          {/* 3.5.2 changes start */}
-          {/* on clicking , it should take me to assignment editor screen  */}
-          <a
-            className="wd-assignment-link text-decoration-none text-reset"
-            href={`#/Kanbas/Courses/${cid}/Assignments/`}
-          >
-            {/* 3.5.2 changes end */}
-
-            <button className="btn btn-danger">
-              <FaPlus className="me-1" />
-              Assignment
-            </button>
-          </a>
-        </div>
+    <div id="wd-assignments">
+      <div className="d-inline-flex align-items-stretch">
+        <span className="input-group-text border border-end-0 rounded-0 bg-white">
+          <CiSearch className="fs-4" />
+        </span>
+        <input
+          id="wd-search-assignment"
+          type="search"
+          className="form-control ml-3 border-start-0 border rounded-0 rounded-left"
+          placeholder="Search..."
+        />
       </div>
+      <ProtectedFacultyRoute>
+        <Link to={`/Kanbas/Courses/${cid}/Assignments/New`}>
+          <button
+            id="wd-add-assignment"
+            className="btn btn-md btn-danger me-1 float-end"
+          >
+            + Assignment
+          </button>
+        </Link>
+        <button
+          id="wd-add-assignment-group"
+          className="btn btn-md me-1 bg-secondary float-end"
+        >
+          + Group
+        </button>
+      </ProtectedFacultyRoute>
+      <br />
+      <br />
 
-      <ul id="wd-modules" className="list-group rounded-0 ">
-        <li className="wd-module list-group-item p-0 mb-5 fs-5  ">
-          <div className="wd-title p-3 ps-2 bg-secondary">
-            {/* <h3 id="wd-assignments-title"> */}{" "}
+      <ul className="list-group rounded-0">
+        <li className="list-group-item p-0 mb-5 fs-5 border-gray">
+          <div id="wd-assignments-title" className="p-3 ps-2 pb-4 bg-secondary">
             <BsGripVertical className="me-2 fs-3" />
-            <FaCaretDown className="me-2 fs-3" />
             ASSIGNMENTS
-            <span className="d-flex justify-content-lg-end">
-              {/* <div className="border border-1 radius-2 rounded-pill border-black ">
-                
-                <p >40% of Total </p>
-                </div> */}
-              <span className="card-header d-flex justify-content-between align-items-center ">
-                <span className="float-end" style={{ marginRight: "20px" }}>
-                  <button style={{ borderRadius: "10px" }}>40% of Total</button>
-                </span>
-              </span>
-              <FaPlus
-                className="position-relative me-2"
-                style={{ bottom: "1px" }}
-              />{" "}
-              <IoEllipsisVertical className="fs-4" />
+            <IoEllipsisVertical className="fs-3 pt-1 float-end" />
+            <BsPlus className="fs-2 pt-2 float-end" />
+            <span className="float-end border border-black p-1 rounded-5">
+              40% of Total
             </span>
           </div>
-          <ul
-            id="wd-assignment-list"
-            className="wd-lessons list-group rounded-0"
-          >
+          <ul id="wd-assignment-list" className="list-group rounded-0">
             {assignments
               .filter((assignment: any) => assignment.course == cid)
-              .map((assign: any) => (
-                // console.log("from editor line 72" + JSON.stringify(assign.assignments))
-
-                <li className="wd-assignment-list-item list-group-item p-3 ps-1 border-success border-top-0 border-end-0 border-bottom-0 border-5">
-                  <>
-                    <div className="border border-0 border-bottom border-bottom-secondary">
-                      <BsGripVertical className="me-2 fs-3" />
-                      <PiNotePencilFill className="me-2 fs-3 " />
-
-                      <a
-                        className="wd-assignment-link text-decoration-none text-reset"
-                        href={`#/Kanbas/Courses/${cid}/Assignments/${assign._id}`}
-                      >
-                        {/* A1 - ENV + HTML */}
-                        {assign._id}-{assign.title}
-                      </a>
-                      <div className="ms-5 ">
-                        <span className="text-danger ">Multiple Modules </span>{" "}
-                        | <b>Not available unitl</b> {assign.availableDate}|{" "}
-                        <br /> <b>Due</b> {assign.dueDate}| 100 pts
-                        <LessonControlButtons />
-                      </div>
+              .map((assignment: any) => (
+                <li className="wd-assignment-list-item wd-lesson list-group-item p-3 ms-0 ps-1">
+                  <div className="d-inline-flex">
+                    <div className="align-self-center">
+                      <BsGripVertical className="me-3 fs-3" />
+                      <TfiWrite className="me-4 fs-3 " />
                     </div>
-                  </>
-
-                  {/* </span> */}
+                    <div>
+                      {currentUser.role === "STUDENT" ? (
+                        <span>
+                          {assignment._id} - {assignment.title}
+                        </span> // Render as text if the role is STUDENT
+                      ) : (
+                        <a
+                          className="wd-assignment-link"
+                          href={`#/Kanbas/Courses/${cid}/Assignments/${assignment._id}`}
+                        >
+                          {assignment._id} - {assignment.title}
+                        </a> // Render as a link for other roles
+                      )}{" "}
+                      <br />
+                      <span className="text-danger">
+                        Multiple Modules
+                      </span> | <b>Not available until</b>{" "}
+                      {assignment.availableDate} |
+                      <br />
+                      <b>Due</b> {assignment.dueDate} | {assignment.points}
+                    </div>
+                  </div>
+                  <LessonControlButtons />
+                  <ProtectedFacultyRoute>
+                    <AssignmentDeleteButton
+                      aid={assignment._id}
+                      deleteAssignment={(id: any) => {
+                        console.log("inside function" + id);
+                        const confirmed = window.confirm(
+                          "Are you sure you want to delete this assignment?"
+                        );
+                        if (confirmed) {
+                          dispatch(deleteAssignment({ _id: id }));
+                        }
+                      }}
+                    />
+                  </ProtectedFacultyRoute>
                 </li>
               ))}
-            {/* <li className="wd-assignment-list-item list-group-item p-3 ps-1 border-success border-top-0 border-end-0 border-bottom-0 border-5">
-              <BsGripVertical className="me-2 fs-3" />
-              <PiNotePencilFill className="me-2 fs-3 " />
-              <a
-                className="wd-assignment-link"
-                href={`#/Kanbas/Courses/${cid}/Assignments/123`}
-              >
-                A2 - CSS + BOOTSTRAP
-              </a>
-              <LessonControlButtons />
-              <br />
-              <span className="text-danger">Multiple Modules </span> |{" "}
-              <b>Not available unitl</b> May 13 at 12:00 am | <br />
-              <b>Due</b> May 20 at 11:59 pm | 100 pts
-            </li>
-
-            <li className="wd-assignment-list-item list-group-item p-3 ps-1 border-success border-top-0 border-end-0 border-bottom-0 border-5">
-              <BsGripVertical className="me-2 fs-3" />
-              <PiNotePencilFill className="me-2 fs-3 " />
-              <a
-                className="wd-assignment-link"
-                href={`#/Kanbas/Courses/${cid}/Assignments/123`}
-              >
-                A3 - JAVASCRIPT + REACT
-              </a>
-              <LessonControlButtons />
-              <br />
-              <span className="text-danger">Multiple Modules </span> |{" "}
-              <b>Not available unitl</b> May 20 at 12:00 am | <br />
-              <b>Due</b> May 27 at 11:59 pm | 100 pts
-            </li> */}
           </ul>
         </li>
       </ul>

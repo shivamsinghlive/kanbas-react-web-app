@@ -23,9 +23,5 @@ export default function Corners() {
             </p>
         </div>
 
-
     );
-
 }
-
-

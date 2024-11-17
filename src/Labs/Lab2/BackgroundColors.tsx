@@ -10,7 +10,5 @@ export default function BackgroundColors() {
             </p>
         </div>
 
-
-
     );
 }

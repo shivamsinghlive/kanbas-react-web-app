@@ -13,7 +13,8 @@ export default function AddingAndRemovingToFromArrays() {
         numberArray1 = {numberArray1} <br />
         stringArray1 = {stringArray1} <br />
         Todo list:
-        <ol>{todoArray}</ol><hr />
+        <ol>{todoArray}</ol>
+        <hr />
       </div>
-  );}
-  
+    );
+  }
