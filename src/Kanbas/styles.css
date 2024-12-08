@@ -29,25 +29,22 @@ body * {  font-family: Arial, Helvetica, sans-serif;  }
     border-left: 3px solid green !important;
   }
 
-  #wd-search-assignment {
-
-    width: 140px; /* Sets the input width to 200 pixels */
-    height: 48px;
-    border-radius: 10px;
+  .search-box-container {
+    position: relative;
+    width: 100%;
   }
 
-  .wd-rounded-corners-all-around {
-    border-radius: 50px;
-   }
-   
-  #wd-search-box {
-
-    width: 180px; /* Sets the input width to 200 pixels */
-    height: 50px;
-    border-radius: 10px;
+  .search-icon {
+    position: absolute;
+    z-index: 1;
+    padding-left: 5px;
+    padding-top: 10px;
   }
 
-  .wd-assignment-link{
-    text-decoration: none;
+  .search-input {
+    width: 40%;
+    height: 40px;
+    position: absolute;
+    border: 1px solid;
+    padding-left: 40px;
   }
-  

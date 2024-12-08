@@ -1,3 +1,17 @@
+// import { Link } from 'react-router-dom';
+// export default function TOC() {
+//     return (
+//       <ul>
+//         <li><Link to="/Labs">Labs</Link></li>
+//         <li><Link to="/Labs/Lab1">Lab 1</Link></li>
+//         <li><Link to="/Labs/Lab2">Lab 2</Link></li>
+//         <li><Link to="/Labs/Lab3">Lab 3</Link></li>
+//         <li><Link to="/Kanbas">Kanbas</Link></li>
+//       </ul>
+//     );
+//   }
+  
+
 import { useLocation } from "react-router";
 export default function TOC() {
   const { pathname } = useLocation();
@@ -28,14 +42,14 @@ export default function TOC() {
       </li>
       <li className="nav-item">
         <a id="wd-a4" href="#/Labs/Lab4"
-          className={`nav-link ${pathname.includes("Lab4") ? "active" : ""}`}>
-          Lab 4
+            className={`nav-link ${pathname.includes("Lab4") ? "active": ""}`}>
+            Lab 4
         </a>
       </li>
       <li className="nav-item">
-        <a id="wd-a5" href="#/Labs/Lab5"
-          className={`nav-link ${pathname.includes("Lab5") ? "active" : ""}`}>
-          Lab 5
+        <a id="wd-a4" href="#/Labs/Lab5"
+            className={`nav-link ${pathname.includes("Lab5") ? "active": ""}`}>
+            Lab 5
         </a>
       </li>
       <li className="nav-item">
@@ -44,7 +58,9 @@ export default function TOC() {
         </a>
       </li>
       <li className="nav-item">
-        <a id="wd-github" className="nav-link" href="https://github.com/shivamsinghlive/kanbas-react-web-app"> Github Repo</a>
+        <a id="wd-k" href="https://github.com/jannunzi" className="nav-link">
+          My GitHub
+        </a>
       </li>
     </ul>
   );
