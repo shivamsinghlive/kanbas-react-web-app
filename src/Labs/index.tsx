@@ -11,11 +11,11 @@ export default function Labs() {
   return (
     <Provider store={store}>
         <div id="wd-labs">
-            <h1 className="text-center"> Rutvik Dhopate</h1>
-            <h2 className="text-center"> Section 2</h2>
+            <h1 className="text-center"> Shivam Singh</h1>
+            <h2 className="text-center"> Section 3</h2>
             <h3> Source Code</h3>
                 Please click here 
-                <a id="wd-github-src" href="https://github.com/RutvikDhopate/Kansas-react-web-app/tree/main/src">Source Code</a>
+                <a id="wd-github-src" href="https://github.com/shivamsinghlive/kanbas-react-web-app">Source Code</a>
                 to check out the GitHub Source Code for Labs and Kanbas.<br/>
             <h1>Labs</h1>
             <TOC />

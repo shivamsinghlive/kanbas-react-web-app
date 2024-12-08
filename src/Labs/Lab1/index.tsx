@@ -246,7 +246,7 @@ to get dummy text<br/>
 
 <h4>GitHub Tag</h4>
 Please click here
-<a id="wd-github" href="https://github.com/RutvikDhopate?tab=repositories">GitHub</a>
+<a id="wd-github" href="https://github.com/shivamsinghlive/kanbas-react-web-app">GitHub</a>
 to check out the GitHub repositories<br/>
       </div>
 
